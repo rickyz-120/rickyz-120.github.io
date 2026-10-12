@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "screen-demo.schema.json",
+  "title": "data/screen-demo.json (dados fictícios de esportes do painel 3D)",
+  "type": "object",
+  "properties": {
+    "tag": {
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "charts": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/chart"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "tag",
+    "charts"
+  ],
+  "additionalProperties": false
+}

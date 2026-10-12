@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "timeline.schema.json",
+  "title": "data/experience.json e data/education.json (end: null = atual)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "org": {
+        "type": "string",
+        "minLength": 1
+      },
+      "role": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "start": {
+        "$ref": "common.schema.json#/$defs/month"
+      },
+      "end": {
+        "$ref": "common.schema.json#/$defs/month"
+      },
+      "place": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "summary": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "bullets": {
+        "$ref": "common.schema.json#/$defs/textList"
+      },
+      "draft": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "id",
+      "org",
+      "role",
+      "start",
+      "end",
+      "draft"
+    ],
+    "additionalProperties": false
+  }
+}

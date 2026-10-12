@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "site.schema.json",
+  "title": "data/site.json",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fullName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "handle": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "role": {
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "tagline": {
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "about": {
+      "type": "object",
+      "properties": {
+        "draft": {
+          "type": "boolean"
+        },
+        "paragraphs": {
+          "$ref": "common.schema.json#/$defs/textList"
+        }
+      },
+      "required": [
+        "paragraphs"
+      ],
+      "additionalProperties": false
+    },
+    "photo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^assets/img/"
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "github": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^https://(www\\.)?github\\.com/"
+        },
+        "linkedin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^https://([a-z]{2,3}\\.)?linkedin\\.com/"
+        },
+        "kaggle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^https://(www\\.)?kaggle\\.com/"
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        }
+      },
+      "required": [
+        "github",
+        "linkedin",
+        "kaggle",
+        "email"
+      ],
+      "additionalProperties": false
+    },
+    "cv": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "file": {
+          "type": "string",
+          "pattern": "\\.pdf$"
+        }
+      },
+      "required": [
+        "available",
+        "file"
+      ],
+      "additionalProperties": false
+    },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "enum": [
+            null,
+            "goatcounter",
+            "plausible"
+          ]
+        },
+        "siteId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "provider",
+        "siteId"
+      ],
+      "additionalProperties": false
+    },
+    "showDraftBadges": {
+      "type": "boolean"
+    },
+    "ogImage": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "common.schema.json#/$defs/text"
+        },
+        "description": {
+          "$ref": "common.schema.json#/$defs/text"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "fullName",
+    "url",
+    "role",
+    "tagline",
+    "about",
+    "links",
+    "cv",
+    "analytics",
+    "showDraftBadges",
+    "ogImage",
+    "seo"
+  ],
+  "additionalProperties": false
+}

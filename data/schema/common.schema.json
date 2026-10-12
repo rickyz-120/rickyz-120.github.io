@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Definições comuns",
+  "$defs": {
+    "text": {
+      "description": "Texto traduzível. Sem 'en', o site usa o 'pt' (o validador avisa).",
+      "type": "object",
+      "properties": {
+        "pt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "draft": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pt"
+      ],
+      "additionalProperties": false
+    },
+    "textList": {
+      "type": "object",
+      "properties": {
+        "pt": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "pt"
+      ],
+      "additionalProperties": false
+    },
+    "labels": {
+      "description": "Lista simples ou traduzível.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "$ref": "#/$defs/textList"
+        }
+      ]
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(https?://|mailto:|[a-z0-9_./-]+$)"
+    },
+    "month": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "chart": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "bars",
+            "line",
+            "donut"
+          ]
+        },
+        "label": {
+          "$ref": "#/$defs/text"
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1
+        },
+        "unit": {
+          "type": "string"
+        },
+        "center": {
+          "$ref": "#/$defs/text"
+        },
+        "source": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": [
+        "kind",
+        "label",
+        "labels",
+        "values"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

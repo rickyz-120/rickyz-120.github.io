@@ -1,0 +1,15 @@
+[
+  {
+    "id": "exemplo-depoimento",
+    "name": "Nome de quem recomenda (exemplo)",
+    "role": "Cargo",
+    "org": "Organização",
+    "quote": {
+      "pt": "Exemplo de depoimento. Só publique depoimentos reais, com autorização da pessoa.",
+      "en": "Sample testimonial. Only publish real testimonials, with the person's permission."
+    },
+    "photo": null,
+    "url": null,
+    "draft": true
+  }
+]

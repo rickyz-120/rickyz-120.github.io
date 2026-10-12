@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "certifications.schema.json",
+  "title": "data/certifications.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "issuer": {
+        "type": "string",
+        "minLength": 1
+      },
+      "year": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1990
+      },
+      "url": {
+        "$ref": "common.schema.json#/$defs/url"
+      },
+      "draft": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "issuer",
+      "year",
+      "url",
+      "draft"
+    ],
+    "additionalProperties": false
+  }
+}

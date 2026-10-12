@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "testimonials.schema.json",
+  "title": "data/testimonials.json (só depoimentos reais e autorizados)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "role": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "org": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "quote": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "photo": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "url": {
+        "$ref": "common.schema.json#/$defs/url"
+      },
+      "draft": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "quote",
+      "draft"
+    ],
+    "additionalProperties": false
+  }
+}

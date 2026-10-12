@@ -1,0 +1,78 @@
+[
+  {
+    "id": "projeto-titanic",
+    "status": "published",
+    "draft": true,
+    "date": "2026-08",
+    "title": { "pt": "Titanic: previsão de sobrevivência", "en": "Titanic: survival prediction" },
+    "tags": { "pt": ["Machine learning", "Classificação", "EDA"], "en": ["Machine learning", "Classification", "EDA"] },
+    "tech": ["Python", "pandas", "scikit-learn"],
+    "problem": {
+      "pt": "Prever a sobrevivência dos passageiros do Titanic a partir de características demográficas e de viagem, como idade, sexo, classe do bilhete e tarifa.",
+      "en": "Predicting the survival of Titanic passengers from demographic and travel features such as age, sex, ticket class and fare."
+    },
+    "solution": {
+      "pt": "Análise exploratória, tratamento de valores ausentes (moda e mediana), codificação das variáveis e um RandomForestClassifier treinado com divisão de 80% para treino e 20% para teste.",
+      "en": "Exploratory analysis, missing value handling (mode and median), feature encoding and a RandomForestClassifier trained on an 80/20 train and test split."
+    },
+    "result": {
+      "pt": "Acurácia de 79,89% nos dados de teste. As variáveis de maior impacto foram sexo, tarifa e idade.",
+      "en": "79.89% accuracy on the test data. The most important features were sex, fare and age."
+    },
+    "repo": "https://github.com/rickyz-120/projeto-titanic",
+    "demo": { "type": "none", "url": null },
+    "image": null,
+    "screen": {
+      "kind": "bars",
+      "label": { "pt": "SOBREVIVÊNCIA POR CLASSE", "en": "SURVIVAL BY CLASS" },
+      "labels": { "pt": ["1ª classe", "2ª classe", "3ª classe"], "en": ["1st class", "2nd class", "3rd class"] },
+      "values": [63.0, 47.3, 24.2],
+      "unit": "%",
+      "source": { "pt": "dados reais · titanic.csv", "en": "real data · titanic.csv" }
+    }
+  },
+  {
+    "id": "projeto-music",
+    "status": "published",
+    "draft": true,
+    "date": "2026-09",
+    "title": { "pt": "Classificador de gêneros musicais", "en": "Music genre classifier" },
+    "tags": { "pt": ["Deep learning", "Áudio", "CNN"], "en": ["Deep learning", "Audio", "CNN"] },
+    "tech": ["Python", "PyTorch"],
+    "problem": {
+      "pt": "Classificar músicas em um dos gêneros do dataset FMA Small a partir do próprio áudio.",
+      "en": "Classifying songs into one of the FMA Small dataset genres from the audio itself."
+    },
+    "solution": {
+      "pt": "Uma CNN em PyTorch que recebe espectrogramas Mel como entrada. O objetivo é estudar na prática a arquitetura CNN e seus principais componentes.",
+      "en": "A PyTorch CNN that takes Mel spectrograms as input. The goal is to study the CNN architecture and its main building blocks hands-on."
+    },
+    "result": { "pt": null, "en": null },
+    "repo": "https://github.com/rickyz-120/projeto_music",
+    "demo": { "type": "none", "url": null },
+    "image": null,
+    "screen": null
+  },
+  {
+    "id": "operation-strategy",
+    "status": "published",
+    "draft": true,
+    "date": "2025-09",
+    "title": { "pt": "Wise Routes: planejamento logístico", "en": "Wise Routes: logistics planning" },
+    "tags": { "pt": ["Logística", "Dashboard", "Aplicação web"], "en": ["Logistics", "Dashboard", "Web app"] },
+    "tech": ["Python", "Flask", "JavaScript"],
+    "problem": {
+      "pt": "Planejar e otimizar rotas logísticas tendo frota, motoristas, custos e clima no mesmo lugar.",
+      "en": "Planning and optimizing logistics routes with fleet, drivers, costs and weather in one place."
+    },
+    "solution": {
+      "pt": "Aplicação web em Python e Flask com dashboard de métricas, mapa de rotas, gestão de motoristas e veículos, análise de custos (incluindo a viabilidade de veículos elétricos) e monitoramento climático. Usa dados sintéticos, prontos para serem trocados por dados reais.",
+      "en": "Python and Flask web app with a metrics dashboard, route map, driver and vehicle management, cost analysis (including electric vehicle feasibility) and weather monitoring. It runs on synthetic data, ready to be swapped for real data."
+    },
+    "result": { "pt": null, "en": null },
+    "repo": "https://github.com/rickyz-120/operation-strategy",
+    "demo": { "type": "none", "url": null },
+    "image": null,
+    "screen": null
+  }
+]

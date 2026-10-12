@@ -1,0 +1,10 @@
+[
+  {
+    "id": "exemplo-certificacao",
+    "title": "Nome da certificação (exemplo)",
+    "issuer": "Emissor",
+    "year": 2026,
+    "url": null,
+    "draft": true
+  }
+]

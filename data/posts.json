@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "exemplo",
+    "title": { "pt": "Como este blog funciona", "en": "How this blog works" },
+    "date": "2026-10-12",
+    "summary": {
+      "pt": "Post de exemplo: onde ficam os arquivos, como escrever em Markdown e como publicar.",
+      "en": "Sample post: where files live, how to write in Markdown and how to publish."
+    },
+    "tags": ["blog", "guia"],
+    "file": { "pt": "content/posts/exemplo.pt.md", "en": "content/posts/exemplo.en.md" },
+    "draft": true
+  }
+]

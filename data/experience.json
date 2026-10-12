@@ -1,0 +1,13 @@
+[
+  {
+    "id": "grupo-soma-bi",
+    "org": "Grupo SOMA",
+    "role": { "pt": "Analista de BI", "en": "BI Analyst" },
+    "start": null,
+    "end": null,
+    "place": null,
+    "summary": { "pt": null, "en": null },
+    "bullets": { "pt": [], "en": [] },
+    "draft": true
+  }
+]

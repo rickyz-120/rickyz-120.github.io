@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "projects.schema.json",
+  "title": "data/projects.json (ordem = ordem de exibição)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "status": {
+        "enum": [
+          "published",
+          "hidden"
+        ]
+      },
+      "draft": {
+        "type": "boolean"
+      },
+      "date": {
+        "$ref": "common.schema.json#/$defs/month"
+      },
+      "title": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "tags": {
+        "$ref": "common.schema.json#/$defs/textList"
+      },
+      "tech": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      },
+      "problem": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "solution": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "result": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "repo": {
+        "type": "string",
+        "pattern": "^https://github\\.com/"
+      },
+      "demo": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "none",
+              "link",
+              "iframe",
+              "image"
+            ]
+          },
+          "url": {
+            "$ref": "common.schema.json#/$defs/url"
+          },
+          "alt": {
+            "$ref": "common.schema.json#/$defs/text"
+          }
+        },
+        "required": [
+          "type",
+          "url"
+        ],
+        "additionalProperties": false
+      },
+      "image": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "screen": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "common.schema.json#/$defs/chart"
+          }
+        ]
+      },
+      "plot": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array"
+              },
+              "layout": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "data"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "status",
+      "draft",
+      "title",
+      "tags",
+      "tech",
+      "problem",
+      "solution",
+      "result",
+      "repo",
+      "demo"
+    ],
+    "additionalProperties": false
+  }
+}

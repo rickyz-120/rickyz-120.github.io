@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "skills.schema.json",
+  "title": "data/skills.json (sem nível, só a lista por categoria)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "label": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      },
+      "draft": {
+        "type": "boolean",
+        "description": "true = lista incompleta: mostra o chip 'mais em breve'"
+      }
+    },
+    "required": [
+      "id",
+      "label",
+      "items"
+    ],
+    "additionalProperties": false
+  }
+}

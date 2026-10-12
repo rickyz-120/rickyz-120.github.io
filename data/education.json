@@ -1,0 +1,13 @@
+[
+  {
+    "id": "fae-ciencia-de-dados",
+    "org": "FAE",
+    "role": { "pt": "Graduação em Ciência de Dados", "en": "Bachelor's degree in Data Science" },
+    "start": null,
+    "end": null,
+    "place": null,
+    "summary": { "pt": "Cursando o 8º período.", "en": "Currently in the 8th semester." },
+    "bullets": { "pt": [], "en": [] },
+    "draft": true
+  }
+]

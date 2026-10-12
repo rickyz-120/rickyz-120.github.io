@@ -1,0 +1,4 @@
+[
+  { "id": "linguagens", "label": { "pt": "Linguagens", "en": "Languages" }, "items": ["Python", "R", "SQL"], "draft": true },
+  { "id": "bi", "label": { "pt": "BI e visualização", "en": "BI and visualization" }, "items": ["Power BI"], "draft": true }
+]
