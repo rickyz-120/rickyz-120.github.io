@@ -1,0 +1,116 @@
+/* Componentes: pílula de menu, botões, chips, selo, cards, painel de vidro, itens de projeto, linha do tempo. */
+
+/* ---------- menu em pílula ---------- */
+.top{position:fixed;z-index:10;top:calc(env(safe-area-inset-top,0px) + 14px);left:16px;right:16px;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:10px;pointer-events:none}
+.top>*{pointer-events:auto}
+.pill{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:4px;border-radius:var(--radius-pill);
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  color:var(--fg);text-decoration:none;font:500 .85rem var(--body)}
+.nav a{display:inline-flex;align-items:center;min-height:36px;padding:6px 14px;border-radius:var(--radius-pill);
+  text-decoration:none;color:var(--muted);transition:background .2s,color .2s;white-space:nowrap}
+.nav a:hover{color:var(--fg)}
+.nav a.on,.nav a[aria-current="page"]{background:var(--glass-strong);color:var(--fg)}
+.nav .logo{font:700 .8rem var(--display);color:var(--fg);background:var(--glass-strong);letter-spacing:.02em;min-width:44px;justify-content:center}
+.nav .links{display:contents}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:nowrap}
+.tools .pill{padding:0 16px;cursor:pointer;justify-content:center}
+.tools .icon{width:44px;padding:0}
+.icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tools .txt{font:500 .78rem var(--mono)}
+.menu-btn{display:none;align-items:center;gap:8px;min-height:36px;padding:6px 14px;border:0;border-radius:var(--radius-pill);background:none;cursor:pointer;font:500 .85rem var(--body);color:var(--fg)}
+.menu-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round}
+.is-disabled{opacity:.62;cursor:not-allowed}
+.is-disabled small,.soon-tag{font:500 .62rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* folha de menu no celular */
+.sheet{position:fixed;z-index:11;top:calc(env(safe-area-inset-top,0px) + 66px);left:16px;right:16px;
+  padding:10px;border-radius:var(--radius);background:var(--glass-strong);border:1px solid var(--line);
+  backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.sheet ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.sheet a{display:flex;align-items:center;min-height:48px;padding:0 16px;border-radius:14px;text-decoration:none;font:500 1rem var(--body);color:var(--fg)}
+.sheet a.on{background:var(--glass)}
+.sheet .sheet-cv{margin-top:6px;border-top:1px solid var(--line);padding-top:6px}
+
+@media (max-width:1099px){
+  .nav .links{display:none}
+  .menu-btn{display:inline-flex}
+}
+@media (max-width:640px){ .tools .cv{display:none} .tools{gap:6px} }
+@media (max-width:360px){ .tools .icon{width:44px} .top{left:8px;right:8px} }
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 22px;border-radius:var(--radius-pill);
+  font:700 .92rem var(--body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.is-disabled:hover{transform:none}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:var(--glass);border-color:var(--line);color:var(--fg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.btn.small{min-height:40px;padding:8px 16px;font-size:.85rem}
+
+/* ---------- chips e selo ---------- */
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.chip{font:400 .74rem var(--mono);padding:5px 11px;border-radius:var(--radius-pill);border:1px solid var(--line);background:var(--glass);color:var(--fg)}
+button.chip{cursor:pointer;min-height:32px}
+button.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chip.dashed{border-style:dashed;color:var(--muted)}
+.badge{display:inline-block;font:500 .62rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;vertical-align:middle;margin-left:8px;
+  padding:3px 8px;border-radius:var(--radius-pill);border:1px dashed var(--line);color:var(--muted);white-space:nowrap}
+.soon{color:var(--muted);font-style:italic}
+
+/* ---------- cards e painel de vidro ---------- */
+.card{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);min-width:0}
+.card h3{margin:0 0 12px;font:500 var(--fs-label) var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2)}
+.panel{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;
+  backdrop-filter:blur(20px) saturate(1.35);-webkit-backdrop-filter:blur(20px) saturate(1.35);min-width:0}
+.kicker{margin:0 0 10px;font:500 var(--fs-label) var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2)}
+.note{margin:28px 0 0;font:400 .78rem var(--mono);color:var(--muted);max-width:60ch}
+
+/* ---------- filtros e busca ---------- */
+.tools-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.search{flex:1 1 160px;min-width:0;min-height:40px;padding:8px 14px;border-radius:var(--radius-pill);border:1px solid var(--line);
+  background:var(--glass);color:var(--fg);font:400 .9rem var(--body)}
+.search::placeholder{color:var(--muted);opacity:1}
+
+/* ---------- item de projeto ---------- */
+.item{border-top:1px solid var(--line);padding-block:6px}
+.item-head{display:block;width:100%;text-align:left;background:none;border:0;padding:10px 2px;cursor:pointer;color:var(--muted);transition:color .2s;border-radius:12px}
+.item-head:hover,.item.sel .item-head{color:var(--fg)}
+.item-title{display:block;font:500 clamp(1.3rem,3vw,1.75rem)/1.15 var(--display)}
+.item-tags{display:block;margin-top:8px;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2)}
+.item-body{padding:4px 2px 14px}
+.item-body dl{margin:0 0 14px;display:grid;gap:10px}
+.item-body dt{font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2)}
+.item-body dd{margin:2px 0 0;font-size:.92rem;color:var(--fg)}
+.item-body .chips{margin-bottom:16px}
+.item-actions{display:flex;gap:8px;flex-wrap:wrap}
+.item-meta{margin:0 0 12px;font:400 .74rem var(--mono);color:var(--muted)}
+.embed{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:var(--glass)}
+.embed summary{cursor:pointer;padding:10px 14px;min-height:44px;display:flex;align-items:center;font:500 .8rem var(--mono);color:var(--fg)}
+.embed iframe{display:block;width:100%;aspect-ratio:16/10;border:0;border-radius:0 0 16px 16px;background:var(--bg)}
+.embed img{display:block;border-radius:0 0 16px 16px}
+.plot{width:100%;min-height:320px}
+.empty{color:var(--muted);margin:12px 2px}
+
+/* ---------- linha do tempo ---------- */
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 34px;--draw:1}
+.tl::before,.tl::after{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;border-radius:2px}
+.tl::before{background:var(--line)}
+.tl::after{background:linear-gradient(var(--accent-2),var(--accent));transform-origin:top;transform:scaleY(var(--draw))}
+.tl-item{position:relative;margin:0 0 18px}
+.tl-dot{position:absolute;left:-34px;top:18px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  background:var(--bg);border:2px solid var(--accent-2);color:var(--accent-2);z-index:1}
+.tl-dot svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tl-item.edu .tl-dot{border-color:var(--edu);color:var(--edu)}
+.tl-card h3{margin:0;font:500 1.05rem/1.3 var(--display);text-transform:none;letter-spacing:0;color:var(--fg)}
+.tl-kind{display:inline-flex;align-items:center;gap:6px;margin:0 0 8px;font:500 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2)}
+.tl-item.edu .tl-kind{color:var(--edu)}
+.tl-org{margin:4px 0 0;color:var(--fg);font-weight:500}
+.tl-when{margin:2px 0 0;font:400 .76rem var(--mono);color:var(--muted)}
+.tl-card p.tl-sum{margin:10px 0 0;font-size:.95rem}
+.tl-card ul{margin:8px 0 0;padding-left:18px;font-size:.92rem}
+
+/* revelar ao rolar: só aplicado por reveal.js; sem JS tudo fica visível */
+.rv{opacity:0;transform:translateY(14px)}
+.rv-in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}

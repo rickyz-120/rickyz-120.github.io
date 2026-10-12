@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rickz · Henrique Reis, analista de dados</title>
+<meta name="description" content="Portfólio do Henrique Reis (Rickz): projetos de dados com Power BI, SQL, Python e R.">
+<link rel="canonical" href="https://rickyz-120.github.io/">
+<meta name="theme-color" content="#040a18">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rickz">
+<meta property="og:title" content="Rickz · Henrique Reis, analista de dados">
+<meta property="og:description" content="Portfólio do Henrique Reis (Rickz): projetos de dados com Power BI, SQL, Python e R.">
+<meta property="og:url" content="https://rickyz-120.github.io/">
+<meta property="og:image" content="https://rickyz-120.github.io/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rickz, Henrique Reis, analista de dados, com um painel holográfico de dados">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rickz · Henrique Reis, analista de dados">
+<meta name="twitter:description" content="Portfólio do Henrique Reis (Rickz): projetos de dados com Power BI, SQL, Python e R.">
+<meta name="twitter:image" content="https://rickyz-120.github.io/assets/img/og-image.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/unbounded-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{if(localStorage.getItem('rz-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<!-- jsonld:start (gerado por scripts/build-sitemap.mjs a partir de data/site.json) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Henrique Reis",
+  "alternateName": "Rickz",
+  "url": "https://rickyz-120.github.io",
+  "jobTitle": "Analista de dados",
+  "sameAs": [
+    "https://github.com/rickyz-120"
+  ]
+}
+</script>
+<!-- jsonld:end -->
+</head>
+<body>
+<a class="skip" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<header class="top">
+  <nav class="pill nav" id="nav" data-i18n-aria="nav_label" aria-label="Principal">
+    <a class="logo" href="#inicio" data-go="inicio" aria-label="Rickz, início">RZ</a>
+    <span class="links" id="navLinks">
+      <a href="#inicio" data-go="inicio" data-i18n="nav_home">Início</a>
+      <a href="#sobre" data-go="sobre" data-i18n="nav_about">Sobre</a>
+      <a href="#projetos" data-go="projetos" data-i18n="nav_projects">Projetos</a>
+      <a href="#habilidades" data-go="habilidades" data-i18n="nav_skills">Habilidades</a>
+      <a href="#trajetoria" data-go="trajetoria" data-i18n="nav_timeline">Trajetória</a>
+      <a href="#certificacoes" data-go="certificacoes" data-i18n="nav_certs" hidden>Certificações</a>
+      <a href="#depoimentos" data-go="depoimentos" data-i18n="nav_testimonials" hidden>Depoimentos</a>
+      <a href="#blog" data-go="blog" data-i18n="nav_blog" hidden>Blog</a>
+      <a href="#contato" data-go="contato" data-i18n="nav_contact">Contato</a>
+    </span>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sheet" data-i18n-aria="menu_open" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <span data-i18n="menu">Menu</span>
+    </button>
+  </nav>
+  <div class="tools">
+    <span class="pill cv is-disabled" id="cvTop" aria-disabled="true"><span data-i18n="cv">Baixar CV</span>&nbsp;<small data-i18n="soon">em breve</small></span>
+    <a class="pill icon" href="#contato" data-go="contato" id="mailBtn" data-i18n-aria="mail" aria-label="Contato e e-mail">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+    </a>
+    <button class="pill icon" id="themeBtn" type="button" aria-pressed="false" data-i18n-aria="theme" aria-label="Tema claro">
+      <svg id="icoSun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>
+      <svg id="icoMoon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+    </button>
+    <button class="pill icon txt" id="langBtn" type="button" aria-label="Mudar para inglês">EN</button>
+    <button class="pill icon" id="pauseBtn" type="button" aria-pressed="false" aria-label="Pausar animações">
+      <svg id="icoPause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+      <svg id="icoPlay" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M8 5l11 7-11 7Z"/></svg>
+    </button>
+  </div>
+</header>
+<div class="sheet" id="sheet" hidden><ul id="sheetList"></ul></div>
+
+<main id="conteudo" tabindex="-1">
+  <section id="inicio" class="hero" aria-labelledby="heroName">
+    <span class="eyebrow" id="eyebrow">Henrique Reis · Analista de dados</span>
+    <h1 class="glitch" id="heroName" data-text="Rickz">Rickz</h1>
+    <p class="tagline" id="tagline">Transformo dados em jogadas.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projetos" data-go="projetos" data-i18n="cta_projects">Ver projetos</a>
+      <span id="cvHero" class="btn ghost is-disabled" aria-disabled="true"><span data-i18n="cv">Baixar CV</span> <small data-i18n="soon">em breve</small></span>
+    </div>
+  </section>
+
+  <section id="sobre" class="section about" aria-labelledby="aboutTitle">
+    <div class="wrap">
+      <div class="card about-card">
+        <img class="about-photo" id="aboutPhoto" width="120" height="120" alt="" hidden>
+        <div>
+          <p class="kicker" data-i18n="about_kicker">Sobre mim</p>
+          <h2 id="aboutTitle" data-i18n="about_title">Prazer, Henrique Reis</h2>
+          <div id="aboutText"></div>
+          <p class="nick"><span aria-hidden="true">↳</span> <span data-i18n="nick">Todo mundo me chama de Rickz</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="projects" aria-labelledby="projTitle">
+    <div class="wrap">
+      <div class="screen-alt" id="screenAlt" role="img" aria-label=""></div>
+      <div class="panel">
+        <h2 id="projTitle" data-i18n="projects_title">Projetos selecionados</h2>
+        <div class="tools-row">
+          <input id="search" class="search" type="search" data-i18n-aria="search" data-i18n-ph="search" aria-label="Buscar projeto" placeholder="Buscar projeto" autocomplete="off">
+          <div class="chips" id="filters" role="group" data-i18n-aria="filter" aria-label="Filtrar por tecnologia"></div>
+        </div>
+        <p class="sr-only" id="projCount" aria-live="polite"></p>
+        <div id="projList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades" class="section skills" aria-labelledby="skillsTitle">
+    <div class="wrap">
+      <h2 id="skillsTitle" data-i18n="skills_title">Habilidades</h2>
+      <div class="groups" id="skillGroups"></div>
+    </div>
+  </section>
+
+  <div class="after-skills">
+    <section id="trajetoria" class="section" aria-labelledby="tlTitle">
+      <span id="formacao"></span>
+      <div class="wrap tl-wrap">
+        <div class="section-head">
+          <h2 id="tlTitle" data-i18n="timeline_title">Trajetória e formação</h2>
+          <div class="chips" id="tlFilters" role="group" data-i18n-aria="tl_filter" aria-label="Filtrar linha do tempo"></div>
+        </div>
+        <ol class="tl" id="timeline"></ol>
+      </div>
+    </section>
+
+    <section id="certificacoes" class="section" aria-labelledby="certTitle" hidden>
+      <div class="wrap">
+        <h2 id="certTitle" data-i18n="certs_title">Certificações</h2>
+        <div class="grid" id="certGrid"></div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="section" aria-labelledby="testTitle" hidden>
+      <div class="wrap">
+        <h2 id="testTitle" data-i18n="testimonials_title">Depoimentos</h2>
+        <div class="grid" id="testGrid"></div>
+      </div>
+    </section>
+
+    <section id="blog" class="section" aria-labelledby="blogTitle" hidden>
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="blogTitle" data-i18n="blog_title">Blog e notas de estudo</h2>
+          <a class="more-link" id="blogAll" href="blog.html" data-i18n="blog_all">Ver todos os posts</a>
+        </div>
+        <div class="grid" id="blogGrid"></div>
+      </div>
+    </section>
+
+    <section id="contato" class="section" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <h2 id="contactTitle" data-i18n="contact_title">Contato e links</h2>
+        <p data-i18n="contact_text">Bora conversar sobre dados? Me chama por aqui.</p>
+        <div class="links" id="contactLinks">
+          <a class="btn ghost" href="https://github.com/rickyz-120" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="mail-row" id="mailRow" hidden></div>
+        <p class="note" id="draftNote" hidden></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Henrique Reis. <span data-i18n="footer_rights">Todos os direitos reservados.</span></span>
+    <a href="https://github.com/rickyz-120" target="_blank" rel="noopener">GitHub ↗</a>
+    <span class="made" data-i18n="footer_made">feito com HTML, CSS e JS</span>
+  </div>
+</footer>
+
+<noscript>
+  <style>.top .tools,#menuBtn,#projetos,#habilidades,.after-skills{display:none!important}.nav .links{display:contents!important}</style>
+  <div class="wrap" style="position:relative;z-index:1;padding-bottom:48px">
+    <div class="card">
+      <p><strong>Henrique Reis (Rickz)</strong>, analista de dados. Estudante de Ciência de Dados (FAE) e analista de BI. Power BI, SQL, Python e R.</p>
+      <p>Projetos: <a href="https://github.com/rickyz-120/projeto-titanic">Titanic</a>, <a href="https://github.com/rickyz-120/projeto_music">classificador de gêneros musicais</a>, <a href="https://github.com/rickyz-120/operation-strategy">Wise Routes</a>.</p>
+      <p>GitHub: <a href="https://github.com/rickyz-120">github.com/rickyz-120</a></p>
+      <p><small>Ative o JavaScript para ver o site completo.</small></p>
+    </div>
+  </div>
+</noscript>
+
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
