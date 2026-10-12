@@ -42,7 +42,7 @@
 @media (max-width:860px){
   .projects{padding-top:calc(42svh + 24px)}
   .projects .wrap{grid-template-columns:1fr}
-  .screen-alt{display:none}
+  .screen-alt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .projects .panel{grid-column:1;max-height:none}
 }
 

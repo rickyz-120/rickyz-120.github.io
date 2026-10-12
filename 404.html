@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Página não encontrada · Rickz</title>
+<meta name="description" content="Esta página não existe. Volte para o portfólio do Rickz.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#040a18">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<script>try{if(localStorage.getItem('rz-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<!-- Estilos embutidos: o GitHub Pages serve esta página em qualquer caminho, então ela não depende de arquivos relativos. -->
+<style>
+@font-face{font-family:'Unbounded';font-weight:700;font-display:swap;src:url('/assets/fonts/unbounded-700.woff2') format('woff2')}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url('/assets/fonts/manrope-400.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-weight:500;font-display:swap;src:url('/assets/fonts/jetbrains-mono-500.woff2') format('woff2')}
+:root{color-scheme:dark;--bg:#040a18;--fg:#e8f0ff;--muted:#93a9d4;--accent:#3b82f6;--accent-2:#22d3ee;--on-accent:#031030;
+  --glass:rgba(14,34,82,.42);--line:rgba(122,170,255,.28);--fringe-a:#ff3d81;--fringe-b:#22d3ee;--glow:rgba(59,130,246,.34)}
+:root[data-theme="light"]{color-scheme:light;--bg:#eaf2ff;--fg:#0b1a3e;--muted:#46608f;--accent:#1d4ed8;--accent-2:#0e7490;--on-accent:#fff;
+  --glass:rgba(255,255,255,.58);--line:rgba(29,78,216,.26);--fringe-a:#e11d74;--fringe-b:#0891b2;--glow:rgba(37,99,235,.2)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px 16px;text-align:center;color:var(--fg);
+  font:400 16px/1.6 'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:radial-gradient(900px 480px at 70% -10%,var(--glow),transparent 62%),var(--bg)}
+main{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:560px}
+.eyebrow{font:500 .72rem 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);
+  padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--glass)}
+h1{position:relative;isolation:isolate;margin:0;font:700 clamp(4rem,18vw,8rem)/1 'Unbounded','Segoe UI',system-ui,sans-serif;letter-spacing:-.02em}
+h1::before,h1::after{content:attr(data-text);position:absolute;inset:0;z-index:-1}
+h1::before{color:var(--fringe-a);transform:translate(-4px,1px)}
+h1::after{color:var(--fringe-b);transform:translate(4px,-1px)}
+p{margin:0;color:var(--muted)}
+a.btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 22px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none}
+a:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px}
+</style>
+</head>
+<body>
+<main>
+  <span class="eyebrow">Erro 404 · Error 404</span>
+  <h1 data-text="404">404</h1>
+  <p>Essa jogada não existe. A página que você procurou não foi encontrada.</p>
+  <p lang="en">This page does not exist.</p>
+  <a class="btn" href="/">Voltar ao início · Back home</a>
+</main>
+</body>
+</html>

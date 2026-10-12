@@ -4,3 +4,7 @@ tests/output/
 *.log
 .DS_Store
 Thumbs.db
+
+# arquivos de trabalho locais (briefing e protótipo não vão para o site)
+PROMPT_CLAUDE_CODE.md
+prototipo-referencia.html

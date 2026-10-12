@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Modelo da imagem de compartilhamento</title>
+<meta name="robots" content="noindex">
+<!-- Modelo usado por scripts/build-og.mjs para gerar assets/img/og-image.png (1200×630). -->
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:radial-gradient(900px 520px at 78% -10%,var(--glow),transparent 62%),var(--bg);color:var(--fg);font-family:var(--body);position:relative}
+.grid{position:absolute;inset:auto 0 0 0;height:300px;background:
+  linear-gradient(transparent 0 0),
+  repeating-linear-gradient(90deg,rgba(34,211,238,.22) 0 1px,transparent 1px 60px),
+  repeating-linear-gradient(0deg,rgba(59,130,246,.22) 0 1px,transparent 1px 60px);
+  transform:perspective(600px) rotateX(62deg);transform-origin:bottom;opacity:.55;-webkit-mask-image:linear-gradient(transparent,#000 60%)}
+.left{position:absolute;left:72px;top:150px;width:560px}
+.eyebrow{display:inline-block;font:500 18px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);
+  padding:8px 18px;border:1px solid var(--line);border-radius:999px;background:var(--glass)}
+h1{position:relative;isolation:isolate;margin:26px 0 18px;font:700 150px/1 var(--display);letter-spacing:-.02em}
+h1::before,h1::after{content:attr(data-text);position:absolute;inset:0;z-index:-1}
+h1::before{color:var(--fringe-a);transform:translate(-6px,2px)}
+h1::after{color:var(--fringe-b);transform:translate(6px,-2px)}
+p{margin:0;font-size:26px;color:var(--muted)}
+.url{position:absolute;left:72px;bottom:56px;font:500 20px var(--mono);color:var(--accent-2)}
+.screen{position:absolute;right:60px;top:120px;width:560px;transform:perspective(1200px) rotateY(-22deg) rotateX(6deg);
+  border:2px solid var(--accent-2);box-shadow:0 0 80px var(--glow),inset 0 0 0 8px rgba(34,211,238,.08);border-radius:6px}
+.screen canvas{display:block;width:100%;height:auto}
+.ring{position:absolute;right:20px;top:170px;width:640px;height:300px;border:2px solid rgba(138,180,255,.45);border-radius:50%;transform:rotate(-8deg)}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="ring"></div>
+<div class="left">
+  <span class="eyebrow" id="eyebrow">Henrique Reis · Analista de dados</span>
+  <h1 data-text="Rickz">Rickz</h1>
+  <p>Power BI · SQL · Python · R</p>
+</div>
+<div class="url">rickyz-120.github.io</div>
+<div class="screen" id="screen"></div>
+<script type="module">
+import { createScreen } from '../assets/js/screen.js';
+import { readTokens } from '../assets/js/util.js';
+const demo = await fetch('../data/screen-demo.json').then((r) => r.json());
+const s = createScreen();
+s.setColors(readTokens(['accent', 'accent-2', 'accent-3', 'fg', 'muted', 'panel', 'line', 'scan']));
+s.setLang('pt', demo.tag.pt);
+s.setPaused(true);
+await document.fonts.ready;
+s.show(demo.charts[0]);
+document.getElementById('screen').appendChild(s.canvas);
+document.body.dataset.ready = '1';
+</script>
+</body>
+</html>
