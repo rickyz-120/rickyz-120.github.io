@@ -12,9 +12,9 @@ export function createTimeline({ experience, education, site, reveal }) {
     ...experience.map((x) => ({ ...x, kind: 'work' })),
     ...education.map((x) => ({ ...x, kind: 'edu' })),
   ];
-  // Mais recentes primeiro: "atual" (end null) no topo, depois pelo fim e pelo início.
-  const key = (x) => (x.end ?? '9999-99') + (x.start ?? '0000-00');
-  items.sort((a, b) => key(b).localeCompare(key(a)));
+  // Ordem cronológica: do início mais antigo ao mais recente (sem data de início vai para o fim).
+  const key = (x) => (x.start ?? '9999-99') + (x.end ?? '9999-99');
+  items.sort((a, b) => key(a).localeCompare(key(b)));
   let filter = location.hash === '#formacao' ? 'edu' : 'all';
 
   function buildFilters() {
