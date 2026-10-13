@@ -28,7 +28,9 @@
       "Looker Studio",
       "Qlik Sense",
       "Matplotlib",
-      "Seaborn"
+      "Seaborn",
+      "Plotly",
+      "ggplot2"
     ]
   }
 ]

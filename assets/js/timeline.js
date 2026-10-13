@@ -44,7 +44,7 @@ export function createTimeline({ experience, education, site, reveal }) {
       li.innerHTML = `<span class="tl-dot">${x.kind === 'edu' ? ICON_EDU : ICON_WORK}</span>` +
         `<article class="card tl-card"><p class="tl-kind">${esc(t(x.kind === 'edu' ? 'kind_edu' : 'kind_work'))}</p>` +
         `<h3>${esc(tr(x.role, lang))}${x.draft && site.showDraftBadges ? `<span class="badge">${esc(t('example'))}</span>` : ''}</h3>` +
-        `<p class="tl-org">${esc(x.org)}${x.place ? ' · ' + esc(x.place) : ''}</p>` +
+        `<p class="tl-org">${esc(x.org)}${x.place ? ' · ' + esc(tr(x.place, lang)) : ''}</p>` +
         `<p class="tl-when">${esc(when(x, lang))}</p>` +
         (summary ? `<p class="tl-sum">${esc(summary)}</p>` : '') +
         (bullets.length ? `<ul>${bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>` : '') +

@@ -6,12 +6,38 @@
       "pt": "Analista de BI",
       "en": "BI Analyst"
     },
-    "start": "2023",
+    "start": "2024-04",
     "end": null,
-    "place": null,
+    "place": {
+      "pt": "Tempo integral · Rio de Janeiro, Brasil · Remoto",
+      "en": "Full-time · Rio de Janeiro, Brazil · Remote"
+    },
     "summary": {
       "pt": null,
       "en": null
+    },
+    "bullets": {
+      "pt": [],
+      "en": []
+    },
+    "draft": false
+  },
+  {
+    "id": "ez-chart-bi",
+    "org": "EZ Chart",
+    "role": {
+      "pt": "Analista de Business Intelligence",
+      "en": "Business Intelligence Analyst"
+    },
+    "start": "2023-08",
+    "end": "2024-03",
+    "place": {
+      "pt": "Tempo integral · Joinville, Santa Catarina, Brasil · Remoto",
+      "en": "Full-time · Joinville, Santa Catarina, Brazil · Remote"
+    },
+    "summary": {
+      "pt": "Competências: Microsoft Power BI e SQL.",
+      "en": "Skills: Microsoft Power BI and SQL."
     },
     "bullets": {
       "pt": [],

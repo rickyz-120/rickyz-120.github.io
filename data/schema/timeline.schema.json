@@ -23,9 +23,16 @@
         "$ref": "common.schema.json#/$defs/month"
       },
       "place": {
-        "type": [
-          "string",
-          "null"
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "common.schema.json#/$defs/text"
+          }
         ]
       },
       "summary": {
