@@ -2,12 +2,21 @@
   {
     "id": "fae-ciencia-de-dados",
     "org": "FAE",
-    "role": { "pt": "Graduação em Ciência de Dados", "en": "Bachelor's degree in Data Science" },
-    "start": null,
+    "role": {
+      "pt": "Graduação em Ciência de Dados",
+      "en": "Bachelor's degree in Data Science"
+    },
+    "start": "2023",
     "end": null,
     "place": null,
-    "summary": { "pt": "Cursando o 8º período.", "en": "Currently in the 8th semester." },
-    "bullets": { "pt": [], "en": [] },
-    "draft": true
+    "summary": {
+      "pt": null,
+      "en": null
+    },
+    "bullets": {
+      "pt": [],
+      "en": []
+    },
+    "draft": false
   }
 ]

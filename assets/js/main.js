@@ -115,7 +115,7 @@ async function boot() {
   function renderSkills(lang) {
     $('#skillGroups').innerHTML = D.skills.map((g) =>
       `<div class="card"><h3>${esc(tr(g.label, lang))}</h3><ul class="chips">` +
-      g.items.map((x) => `<li class="chip">${esc(x)}</li>`).join('') +
+      g.items.map((x) => `<li class="chip">${esc(tr(x, lang))}</li>`).join('') +
       (g.draft && site.showDraftBadges ? `<li class="chip dashed">${esc(t('skills_more'))}</li>` : '') +
       `</ul></div>`).join('');
   }

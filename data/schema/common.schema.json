@@ -75,7 +75,8 @@
         "string",
         "null"
       ],
-      "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+      "pattern": "^\\d{4}(-(0[1-9]|1[0-2]))?$",
+      "description": "AAAA ou AAAA-MM"
     },
     "id": {
       "type": "string",

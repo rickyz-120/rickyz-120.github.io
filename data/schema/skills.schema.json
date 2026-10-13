@@ -14,10 +14,18 @@
       },
       "items": {
         "type": "array",
+        "minItems": 1,
         "items": {
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "common.schema.json#/$defs/text"
+            }
+          ]
         },
-        "minItems": 1
+        "description": "Texto simples ou {pt, en} quando o nome muda com o idioma"
       },
       "draft": {
         "type": "boolean",

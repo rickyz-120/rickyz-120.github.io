@@ -8,29 +8,28 @@
     "en": "Data analyst"
   },
   "tagline": {
-    "pt": "Transformo dados em jogadas.",
-    "en": "Turning data into plays.",
-    "draft": true
+    "pt": "Transformando dados em jogadas.",
+    "en": "Turning data into plays."
   },
   "about": {
-    "draft": true,
+    "draft": false,
     "paragraphs": {
       "pt": [
         "Estou no 8º período de Ciência de Dados na FAE e trabalho como analista de BI no Grupo SOMA.",
-        "Gosto de pegar um monte de números soltos e transformar em algo que dá para entender e decidir. Este espaço vai contar quem eu sou, o que já fiz e para onde quero ir."
+        "Gosto de pegar números soltos e transformar em algo que dá para entender e decidir. Este espaço vai contar quem eu sou, o que já fiz e para onde quero ir."
       ],
       "en": [
         "I am in the 8th semester of Data Science at FAE and work as a BI analyst at Grupo SOMA.",
-        "I like taking a pile of loose numbers and turning them into something people can understand and act on. This space will tell who I am, what I have built and where I want to go."
+        "I like taking loose numbers and turning them into something people can understand and act on. This space will tell who I am, what I have built and where I want to go."
       ]
     }
   },
   "photo": null,
   "links": {
     "github": "https://github.com/rickyz-120",
-    "linkedin": null,
-    "kaggle": null,
-    "email": null
+    "linkedin": "https://www.linkedin.com/in/henrique-reis-br/",
+    "kaggle": "https://www.kaggle.com/rickyz120",
+    "email": "rickyzstudy@gmail.com"
   },
   "cv": {
     "available": false,

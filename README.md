@@ -124,9 +124,9 @@ Os botões "Baixar CV" passam a funcionar. Antes disso, eles aparecem desativado
 1. Salve a foto em `assets/img/profile.jpg` (quadrada, de uns 400×400 px; WebP também serve).
 2. Em `data/site.json`, mude `"photo": null` para `"photo": "assets/img/profile.jpg"`.
 
-### Preencher LinkedIn, Kaggle e e-mail
+### Trocar LinkedIn, Kaggle e e-mail
 
-Em `data/site.json` → `links`, troque `null` pelo endereço. Cada botão de contato só aparece quando o link existe. O e-mail aparece como botão `mailto:` e como texto com botão "copiar". Depois rode:
+Em `data/site.json` → `links` (use `null` para esconder um botão). Cada botão de contato só aparece quando o link existe. O e-mail aparece como botão `mailto:` e como texto com botão "copiar". Depois rode:
 
 ```bash
 npm run sitemap      # atualiza também o JSON-LD (sameAs) do index.html
@@ -195,7 +195,8 @@ Decisões que tomei sozinho durante a construção, para você revisar:
 - **Gráfico real no painel 3D:** o Titanic mostra a taxa de sobrevivência por classe (63,0%, 47,3% e 24,2%), calculada a partir do `titanic.csv` do próprio repositório. Os outros projetos mostram os gráficos fictícios de esportes, marcados como "dados fictícios".
 - **Tecnologias dos projetos** (que viram filtros), tiradas dos READMEs, do notebook e do `requirements.txt`: Python, pandas, scikit-learn, PyTorch, Flask e JavaScript.
 - **Projeto de música** descrito sem menção a equipe, como você pediu.
-- **Formação e trajetória** sem datas (não foram informadas). Aparecem como "atual"; o "8º período" está no resumo da formação.
+- **Datas da linha do tempo** só com o ano (`"start": "2023"`); o formato `"AAAA-MM"` também é aceito.
+- **Habilidades com nome traduzível:** um item pode ser texto simples ou `{ "pt": "HTML e CSS (básico)", "en": "HTML & CSS (basic)" }`.
 - **Fontes hospedadas no próprio site** (`assets/fonts/`, subconjunto latino) em vez do Google Fonts: mais rápido e sem depender de terceiros.
 - **Three.js carregado quando o navegador fica ocioso**, depois do `load`, e não só com `defer`. É o que mantém a nota de performance no celular acima de 85. O painel 3D aparece com um fade curto.
 - **Plotly** na versão "basic" (barras, linhas, pizza; 1 MB), copiado para `assets/vendor/` e carregado só quando um projeto declara `plot` e o visitante abre o gráfico. Nenhum projeto usa por enquanto.
