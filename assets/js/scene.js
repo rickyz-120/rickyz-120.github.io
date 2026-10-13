@@ -86,7 +86,7 @@ export function createScene({ canvas, screen }) {
     const asp = camera.aspect, halfW = 2.62 * asp, fit = Math.min(1, .92 * halfW * 2 / 4.9);
     let h, p;
     if (asp < .9) { h = { x: 0, y: -1.05, s: fit, ry: -.12, rx: .08 }; p = { x: 0, y: 1.3, s: fit * .85, ry: .12, rx: .05 }; }
-    else { h = { x: 0, y: -.95, s: fit, ry: -.25, rx: .1 }; p = { x: -.46 * halfW, y: -.1, s: Math.min(.85, halfW * .8 / 4.4), ry: .38, rx: .05 }; }
+    else { h = { x: 0, y: -1.12, s: fit * .96, ry: -.25, rx: .1 }; p = { x: -.46 * halfW, y: -.1, s: Math.min(.85, halfW * .8 / 4.4), ry: .38, rx: .05 }; }
     const o = {};
     for (const k in h) o[k] = h[k] + (p[k] - h[k]) * pe;
     return o;
@@ -177,7 +177,11 @@ export function createScene({ canvas, screen }) {
 
   return {
     // Chamado quando three.min.js terminou de carregar (ou falhou).
-    start() { if (!initWebGL()) toFallback(); wake(); },
+    start() {
+      if (!initWebGL()) toFallback();
+      else if (!st.paused && canvas.animate) canvas.animate([{ opacity: 0 }, { opacity: st.opacity }], { duration: 700, easing: 'ease-out' });
+      wake();
+    },
     fallback: toFallback,
     get mode() { return mode; },
     setPaused(p) { st.paused = p; screen.setPaused(p); wake(); },

@@ -22,11 +22,29 @@ const ICONS = {
 /* ---------- pausa ---------- */
 const savedPause = lsGet('rz-paused');
 let paused = savedPause === null ? prefersReducedMotion() : savedPause === '1';
+const pauseHooks = new Set();
+function setPauseUi() {
+  const b = $('#pauseBtn');
+  b.setAttribute('aria-pressed', String(paused));
+  b.setAttribute('aria-label', paused ? t('play') : t('pause'));
+  $('#icoPause').hidden = paused; $('#icoPlay').hidden = !paused;
+  root.classList.toggle('paused', paused);
+}
+// Ligado antes de carregar os dados: o botão responde desde o primeiro clique.
+function bindPause() {
+  setPauseUi();
+  $('#pauseBtn').addEventListener('click', () => {
+    paused = !paused; lsSet('rz-paused', paused ? '1' : '0');
+    setPauseUi();
+    pauseHooks.forEach((fn) => fn(paused));
+  });
+}
 
 async function boot() {
   initTheme();
   bindLangButton();
   applyStatic();
+  bindPause();
   $('#year').textContent = String(new Date().getFullYear());
 
   let D;
@@ -64,10 +82,13 @@ async function boot() {
   const badge = (item) => (item?.draft && site.showDraftBadges ? `<span class="badge">${esc(t('example'))}</span>` : '');
 
   function renderHero(lang) {
-    $('#eyebrow').textContent = `${site.fullName} · ${tr(site.role, lang)}`;
-    $('#heroName').textContent = site.name;
+    // só reescreve o que mudou: reescrever o nome criaria um novo LCP
+    const setText = (el, v) => { if (el.textContent !== v) el.textContent = v; };
+    setText($('#eyebrow'), `${site.fullName} · ${tr(site.role, lang)}`);
+    setText($('#heroName'), site.name);
     $('#heroName').dataset.text = site.name;
-    $('#tagline').innerHTML = esc(tr(site.tagline, lang)) + badge(site.tagline);
+    const tag = esc(tr(site.tagline, lang)) + badge(site.tagline);
+    if ($('#tagline').innerHTML !== tag) $('#tagline').innerHTML = tag;
     const cvOn = site.cv?.available;
     ['#cvHero', '#cvTop'].forEach((sel) => {
       const old = $(sel); if (!old) return;
@@ -219,19 +240,7 @@ async function boot() {
   window.addEventListener('resize', requestScroll);
 
   /* ---------- pausa, tema, idioma ---------- */
-  function setPauseUi() {
-    const b = $('#pauseBtn');
-    b.setAttribute('aria-pressed', String(paused));
-    b.setAttribute('aria-label', paused ? t('play') : t('pause'));
-    $('#icoPause').hidden = paused; $('#icoPlay').hidden = !paused;
-    root.classList.toggle('paused', paused);
-  }
-  $('#pauseBtn').addEventListener('click', () => {
-    paused = !paused; lsSet('rz-paused', paused ? '1' : '0');
-    setPauseUi(); scene.setPaused(paused);
-    if (paused) reveal.revealAll();
-    onScroll();
-  });
+  pauseHooks.add((p) => { scene.setPaused(p); if (p) reveal.revealAll(); onScroll(); });
   onTheme(() => scene.applyColors());
   onLang((lang) => {
     screen.setLang(lang, tr(D['screen-demo'].tag, lang));
@@ -250,16 +259,18 @@ async function boot() {
   const hash = location.hash.slice(1);
   if (hash && hash !== 'formacao' && document.getElementById(hash)) requestAnimationFrame(() => document.getElementById(hash).scrollIntoView());
 
-  /* ---------- Three.js: carregado depois da primeira pintura para não travar o início ---------- */
-  const loadThree = () => {
+  /* ---------- Three.js: carregado depois do load, quando o navegador fica ocioso, para não travar o início ---------- */
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1200));
+  const loadThree = () => idle(() => {
     const s = document.createElement('script');
     s.src = 'assets/vendor/three.min.js';
     s.onload = () => scene.start();
     s.onerror = () => scene.fallback();
     document.head.appendChild(s);
-  };
+  }, { timeout: 2500 });
   if (document.readyState === 'complete') loadThree();
   else window.addEventListener('load', loadThree, { once: true });
+  root.dataset.ready = '1';
 }
 
 boot();

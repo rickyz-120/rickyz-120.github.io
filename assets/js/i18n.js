@@ -4,12 +4,12 @@ import { lsGet, lsSet, params } from './util.js';
 
 export const UI = {
   pt: {
-    skip: 'Pular para o conteúdo',
+    skip: 'Pular para o conteúdo', logo: 'RZ, início',
     nav_label: 'Principal', nav_home: 'Início', nav_about: 'Sobre', nav_projects: 'Projetos', nav_skills: 'Habilidades',
     nav_timeline: 'Trajetória', nav_certs: 'Certificações', nav_testimonials: 'Depoimentos', nav_blog: 'Blog', nav_contact: 'Contato',
     menu: 'Menu', menu_open: 'Abrir menu', menu_close: 'Fechar menu',
     cv: 'Baixar CV', soon: 'em breve', cv_soon: 'CV em breve',
-    theme: 'Tema claro', lang: 'Mudar para inglês', mail: 'Contato e e-mail',
+    theme: 'Tema claro', lang: 'EN, mudar para inglês', mail: 'Contato e e-mail',
     pause: 'Pausar animações', play: 'Retomar animações',
     cta_projects: 'Ver projetos',
     about_kicker: 'Sobre mim', about_title: 'Prazer, Henrique Reis', nick: 'Todo mundo me chama de Rickz',
@@ -39,12 +39,12 @@ export const UI = {
     post_missing: 'Post não encontrado.', post_lang_fallback: 'Este post ainda não tem versão em inglês.',
   },
   en: {
-    skip: 'Skip to content',
+    skip: 'Skip to content', logo: 'RZ, home',
     nav_label: 'Main', nav_home: 'Home', nav_about: 'About', nav_projects: 'Projects', nav_skills: 'Skills',
     nav_timeline: 'Journey', nav_certs: 'Certifications', nav_testimonials: 'Testimonials', nav_blog: 'Blog', nav_contact: 'Contact',
     menu: 'Menu', menu_open: 'Open menu', menu_close: 'Close menu',
     cv: 'Download CV', soon: 'soon', cv_soon: 'CV coming soon',
-    theme: 'Light theme', lang: 'Switch to Portuguese', mail: 'Contact and email',
+    theme: 'Light theme', lang: 'PT, switch to Portuguese', mail: 'Contact and email',
     pause: 'Pause animations', play: 'Resume animations',
     cta_projects: 'View projects',
     about_kicker: 'About me', about_title: 'Hi, I am Henrique Reis', nick: 'Everyone calls me Rickz',

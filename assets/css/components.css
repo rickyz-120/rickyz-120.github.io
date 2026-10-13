@@ -7,18 +7,19 @@
 .pill{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:4px;border-radius:var(--radius-pill);
   background:var(--glass);border:1px solid var(--line);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   color:var(--fg);text-decoration:none;font:500 .85rem var(--body)}
-.nav a{display:inline-flex;align-items:center;min-height:36px;padding:6px 14px;border-radius:var(--radius-pill);
+.nav{padding:2px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:var(--radius-pill);
   text-decoration:none;color:var(--muted);transition:background .2s,color .2s;white-space:nowrap}
 .nav a:hover{color:var(--fg)}
 .nav a.on,.nav a[aria-current="page"]{background:var(--glass-strong);color:var(--fg)}
 .nav .logo{font:700 .8rem var(--display);color:var(--fg);background:var(--glass-strong);letter-spacing:.02em;min-width:44px;justify-content:center}
 .nav .links{display:contents}
 .tools{display:flex;gap:8px;align-items:center;flex-wrap:nowrap}
-.tools .pill{padding:0 16px;cursor:pointer;justify-content:center}
-.tools .icon{width:44px;padding:0}
+.tools .pill{min-height:48px;padding:0 16px;cursor:pointer;justify-content:center}
+.tools .icon{width:48px;padding:0}
 .icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tools .txt{font:500 .78rem var(--mono)}
-.menu-btn{display:none;align-items:center;gap:8px;min-height:36px;padding:6px 14px;border:0;border-radius:var(--radius-pill);background:none;cursor:pointer;font:500 .85rem var(--body);color:var(--fg)}
+.menu-btn{display:none;align-items:center;gap:8px;min-height:44px;padding:6px 14px;border:0;border-radius:var(--radius-pill);background:none;cursor:pointer;font:500 .85rem var(--body);color:var(--fg)}
 .menu-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round}
 .is-disabled{opacity:.62;cursor:not-allowed}
 .is-disabled small,.soon-tag{font:500 .62rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -37,7 +38,8 @@
   .menu-btn{display:inline-flex}
 }
 @media (max-width:640px){ .tools .cv{display:none} .tools{gap:6px} }
-@media (max-width:360px){ .tools .icon{width:44px} .top{left:8px;right:8px} }
+@media (max-width:400px){ .tools .icon{width:44px} .tools .pill{min-height:44px} .nav .logo{min-width:40px;padding-inline:10px} .menu-btn{padding-inline:10px} }
+@media (max-width:360px){ .top{left:8px;right:8px} .menu-btn span{display:none} }
 
 /* ---------- botões ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 22px;border-radius:var(--radius-pill);
