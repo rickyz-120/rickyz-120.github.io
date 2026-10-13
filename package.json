@@ -4,12 +4,14 @@
   "type": "module",
   "description": "Portfólio do Henrique \"Rickz\" Reis. Site estático (HTML, CSS e JS puros) servido pelo GitHub Pages.",
   "scripts": {
+    "serve": "node tests/serve.mjs 8080",
     "validate": "node scripts/validate-data.mjs",
     "sitemap": "node scripts/build-sitemap.mjs",
     "vendor": "node scripts/copy-vendor.mjs",
-    "serve": "npx --yes serve -l 8080 .",
-    "test": "node tests/screenshots.mjs",
-    "og": "node scripts/build-og.mjs"
+    "og": "node scripts/build-og.mjs",
+    "test": "node tests/functional.mjs && node tests/smoke.mjs",
+    "screenshots": "node tests/screenshots.mjs",
+    "lighthouse": "node tests/lighthouse.mjs"
   },
   "devDependencies": {
     "@fontsource/jetbrains-mono": "5.1.0",
