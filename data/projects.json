@@ -37,21 +37,31 @@
     "draft": true,
     "date": "2026-09",
     "title": { "pt": "Classificador de gêneros musicais", "en": "Music genre classifier" },
-    "tags": { "pt": ["Deep learning", "Áudio", "CNN"], "en": ["Deep learning", "Audio", "CNN"] },
-    "tech": ["Python", "PyTorch"],
+    "tags": { "pt": ["Deep learning", "Áudio", "CNN", "Transfer learning"], "en": ["Deep learning", "Audio", "CNN", "Transfer learning"] },
+    "tech": ["Python", "PyTorch", "librosa"],
     "problem": {
-      "pt": "Classificar músicas em um dos gêneros do dataset FMA Small a partir do próprio áudio.",
-      "en": "Classifying songs into one of the FMA Small dataset genres from the audio itself."
+      "pt": "Classificar músicas em um de 8 gêneros do dataset FMA Small (8.000 faixas de 30s) a partir do próprio áudio.",
+      "en": "Classifying songs into one of 8 genres of the FMA Small dataset (8,000 30-second tracks) from the audio itself."
     },
     "solution": {
-      "pt": "Uma CNN em PyTorch que recebe espectrogramas Mel como entrada. O objetivo é estudar na prática a arquitetura CNN e seus principais componentes.",
-      "en": "A PyTorch CNN that takes Mel spectrograms as input. The goal is to study the CNN architecture and its main building blocks hands-on."
+      "pt": "Uma CNN em PyTorch treinada do zero sobre espectrogramas Mel, evoluída em quatro versões (SpecAugment, mixed precision para caber em 4 GB de VRAM, média móvel dos pesos), com cada mudança comparada na validação. Depois, a mesma tarefa com transfer learning: a CNN14 do PANNs, pré-treinada em ~2 milhões de áudios, como extratora de características. Inclui um script que classifica qualquer mp3.",
+      "en": "A PyTorch CNN trained from scratch on Mel spectrograms, evolved over four versions (SpecAugment, mixed precision to fit in 4 GB of VRAM, weight averaging), with every change compared on the validation set. Then the same task with transfer learning: the PANNs CNN14, pretrained on ~2 million audio clips, as a feature extractor. Includes a script that classifies any mp3."
     },
-    "result": { "pt": null, "en": null },
+    "result": {
+      "pt": "No teste (usado uma única vez), 54,6% com a CNN do zero e 57,9% com transfer learning, contra 12,5% do acaso. Hip-Hop e Electronic passam de 70%; os erros se concentram em gêneros que se sobrepõem, como Instrumental e Folk.",
+      "en": "On the test set (used only once), 54.6% with the CNN trained from scratch and 57.9% with transfer learning, against 12.5% by chance. Hip-Hop and Electronic go above 70%; errors concentrate on overlapping genres such as Instrumental and Folk."
+    },
     "repo": "https://github.com/rickyz-120/projeto_music",
     "demo": { "type": "none", "url": null },
     "image": null,
-    "screen": null
+    "screen": {
+      "kind": "bars",
+      "label": { "pt": "ACURÁCIA NO TESTE", "en": "TEST ACCURACY" },
+      "labels": { "pt": ["CNN v2", "CNN v3", "CNN v4", "Pré-treinada"], "en": ["CNN v2", "CNN v3", "CNN v4", "Pretrained"] },
+      "values": [53.5, 55.0, 54.6, 57.9],
+      "unit": "%",
+      "source": { "pt": "dados reais · FMA Small", "en": "real data · FMA Small" }
+    }
   },
   {
     "id": "operation-strategy",
